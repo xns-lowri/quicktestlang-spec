@@ -4,7 +4,7 @@ Specification documents for Quick Test Language.
 ## Goals
 QTL is a concise domain-specific language for describing automated production test sequences.
 
-Design priorities:
+### Design priorities:
 - Test sequence laid out and readable in order of execution
 - Minimal boilerplate
 - Safe test failure and error handling behaviour
@@ -13,7 +13,7 @@ Design priorities:
 - Bounded control flow (only within test steps, and selectively skipping test steps after failures)
 - Test limits 
 
-Primary features:
+### Primary features:
 - Metadata block specifying tester and DUT parameters (identifiers, resource requirements, signal and power config/limits, expected test record outputs/format)
 - Grouping of individual instructions into logical 'test steps'
   - Failing a test step may allow some or all subsequent test steps to be skipped.
@@ -21,9 +21,24 @@ Primary features:
 - Instruction for performing or otherwise recording a test measurement value.
 - Instruction (or modifier) for recording a test failure with a message and value.
 
+## Language Specification
 
-## Program Structure
+### Program Package
+- Test definition file
+  - Compiled test sequence
+- DUT Config and Test Limit values
+- Assets (e.g. waveforms)
 
+### Lexical and Syntax Rules
+#### Source Files
+- Source files are UTF-8 encoded
+- Keywords are case-sensitive 
+- Variable names must match ^[a-zA-Z_][a-zA-Z0-9_]*
+- Whitespace (including newlines) separates tokens but is otherwise insignificant
+- Statements are terminated by a semicolon ;
+- Blocks are delimited by braces { }
+
+### Program Structure
 meta { ... } //header data structure
 group "name" { ... }; //groups related test steps together into each distinct part of the test sequence (e.g. power-on test, comms test, etc)
 step "name" { ... }; //main test code structure, contains all operations for performing one logical step of the test sequence (e.g. voltage regulator output, quiescent current draw, etc)
