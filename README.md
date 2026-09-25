@@ -54,7 +54,7 @@ Decimal literals must match `^[0-9+-][0-9]*\.[0-9][0-9]*`
 
 - Positive numbers may start with `+` or 0..9, negative numbers must start with `-`
 - Any number of digits allowed before or after an optional decimal point
-- 
+- Inclusion of decimal point denotes a decimal value (and must be followed by at least one digit)
 - Future support anticipates 0x and 0b prefixes for hex and binary literals respectively, if needed
 
 ### String Literals
