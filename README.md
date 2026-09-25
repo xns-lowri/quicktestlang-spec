@@ -40,7 +40,9 @@ QTL is a concise domain-specific language for describing automated production te
 
 ## Program Structure
 meta { ... } //header data structure
+
 group "name" { ... }; //groups related test steps together into each distinct part of the test sequence (e.g. power-on test, comms test, etc)
+
 step "name" { ... }; //main test code structure, contains all operations for performing one logical step of the test sequence (e.g. voltage regulator output, quiescent current draw, etc)
 
 ## Operations
