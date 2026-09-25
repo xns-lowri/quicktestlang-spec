@@ -38,7 +38,7 @@ QTL is a concise domain-specific language for describing automated production te
 - Statements are terminated by a semicolon ;
 - Blocks are delimited by braces { }
 
-### Data types
+### Literals
 
 #### Boolean Literals
 Boolean values are widely supported, with first-class access to bitfields.
@@ -53,12 +53,18 @@ Integer literals must match `^[0-9+-][0-9]*`
 Decimal literals must match `^[0-9+-][0-9]*\.[0-9][0-9]*`
 
 - Positive numbers may start with `+` or 0..9, negative numbers must start with `-`
+  - A unary operator followed by a positive number will be coerced to a negative literal (e.g. `-3.45` and `- 3.45`)
 - Any number of digits allowed before or after an optional decimal point
 - Inclusion of decimal point denotes a decimal value (and must be followed by at least one digit)
 - Future support anticipates 0x and 0b prefixes for hex and binary literals respectively, if needed
 
-### String Literals
+#### String Literals
 Single character values are enclosed with `''`, multiple character strings are enclosed with `""`.
+
+
+
+## Data Types
+
 
 ## Program Structure
 `meta { ... }` header data structure
