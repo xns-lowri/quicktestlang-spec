@@ -33,7 +33,7 @@ QTL is a concise domain-specific language for describing automated production te
 #### Source Files
 - Source files are UTF-8 encoded
 - Keywords are case-sensitive 
-- Variable names must match ^[a-zA-Z_][a-zA-Z0-9_]*
+- Identifiers must match ^[a-zA-Z_][a-zA-Z0-9_]* and are case-sensitive
 - Whitespace (including newlines) separates tokens but is otherwise insignificant
 - Statements are terminated by a semicolon ;
 - Blocks are delimited by braces { }
