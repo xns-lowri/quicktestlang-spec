@@ -67,13 +67,12 @@ TODO revise/complete according to later spec
 The following data types are provided:
 
 ### Discrete types
-    bool
-    tris
-    digital
+    bool                    true/false
+    3state                  true/false/highZ
 ### Numeric types
-    u8  u16  u32  u64
-    i8  i16  i32  i64
-    f32  f64
+    u8  u16  u32  u64       unsigned integers
+    i8  i16  i32  i64       signed integers
+    f32  f64                floating point
 ### Text types
-    char
-    string
+    char                    single character
+    string                  character string
