@@ -4,8 +4,8 @@
 A QTL test program contains the following files:
 - Test definition file
 - Compiled test bytecode file
-- DUT Config and Test Limit values file
-- Optional: Assets (e.g. waveforms)
+- Config and limit values file
+- Optional: Test assets (e.g. waveforms)
 
 ## Program Structure
 
