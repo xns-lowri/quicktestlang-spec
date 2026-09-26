@@ -1,11 +1,13 @@
 # Language Model
 
 ## Test Program Package
-A QTL test program contains the following files:
-- Test definition file
-- Compiled test bytecode file
+A QTL test program contains the following source files:
+- Test sequence source code file
 - Config and limit values file
 - Optional: Test assets (e.g. waveforms)
+
+The source code is compiled into executable VM bytecode before being made available to test units alongside the config/limit file and any test assets.
+- TODO: consider options for signing/verifying versions, possibly out of scope for the language?
 
 ## Program Structure
 
