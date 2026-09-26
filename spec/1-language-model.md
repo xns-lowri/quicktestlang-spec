@@ -1,7 +1,7 @@
 # Language Model
 
 ## Test Program Package
-A QTL test program may contains the following files:
+A QTL test program contains the following files:
 - Test definition file
 - Compiled test bytecode file
 - DUT Config and Test Limit values file
@@ -11,7 +11,7 @@ A QTL test program may contains the following files:
 
 TODOs:
 - sections: metadata, init, test
-- mapping in values from limit file (identifiers)
+- mapping in values from limit file (+ identifiers)
 
 TODOs - metadata:
 - aliasing resources (e.g. input pin given name that identifies net on DUT)
