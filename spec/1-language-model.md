@@ -1,10 +1,15 @@
 # Language Model
+A QTL program ('program') describes sequence of actions and measurements required to perform a single test cycle. Programs written with the language are compiled to bytecode for execution by a VM running on the test unit.
 
-## Program Package
+## QTL Program Structure
+
+
+## Test Program Package
+A QTL test program may contains the following files:
 - Test definition file
-  - Compiled test sequence
-- DUT Config and Test Limit values
-- Assets (e.g. waveforms)
+- Compiled test bytecode file
+- DUT Config and Test Limit values file
+- Optional: Assets (e.g. waveforms)
 
 ## Source Files
 - Source files are UTF-8 encoded
