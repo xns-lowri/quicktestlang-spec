@@ -4,7 +4,7 @@
 - Source files are UTF-8 encoded
 - Keywords are case-sensitive 
 - Identifiers must match `^[a-zA-Z_][a-zA-Z0-9_]*` and are case-sensitive
-- Whitespace (including newlines) separates tokens but is otherwise insignificant
+- Whitespace separates tokens but is otherwise insignificant
 - Statements are terminated by a semicolon `;`
 - Blocks are enclosed by braces `{ }`
 - Function arguments are enclosed by parentheses `()` and separated by commas `,`
