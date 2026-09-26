@@ -17,6 +17,7 @@ The virtual machine is responsible for test cycle sequencing, test results handl
 
 ## Primary features:
 - Metadata block specifying tester and DUT parameters (identifiers, resource requirements, signal and power config/limits, expected test record outputs/format)
+  - TODO ideally split this out into a metadata file (?), consider methods to enforce correct meta+prog are always used together (is there any metadata that is independent of a test sequence? - DUT data, maybe add that to limits file instead? limits file becomes top level test spec defining dut and fixture checks and test limits (and maybe template test results defs), linking to a test prog used to get values for test report?)
 - Grouping of individual instructions into logical 'test steps'
   - Failing a test step may allow some or all subsequent test steps to be skipped.
   - Instructions within a step will be completed in full after recording a failure.
