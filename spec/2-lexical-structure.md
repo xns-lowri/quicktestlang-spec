@@ -4,8 +4,6 @@
 ## Literals
 
 ### Boolean Literals
-Boolean values are widely supported, with first-class access to bitfields.
-
 Boolean literals are `true` and `false`.
 
 ### Number Literals
@@ -16,7 +14,7 @@ Integer literals must match `^[0-9+-][0-9]*`
 Decimal literals must match `^[0-9+-][0-9]*\.[0-9][0-9]*`
 
 - Positive numbers may start with `+` or 0..9, negative numbers must start with `-`
-  - A unary operator followed by a positive number will be coerced to a negative literal (e.g. `x = -3.45` and `x = - 3.45`)
+  - A unary operator followed by a positive number will (not?) be coerced to a negative literal (e.g. `x = -3.45` and `x = - 3.45`)
 - Any number of digits allowed before or after an optional decimal point
 - Inclusion of decimal point denotes a decimal value (and must be followed by at least one digit)
 - Future support anticipates 0x and 0b prefixes for hex and binary literals respectively, if needed
