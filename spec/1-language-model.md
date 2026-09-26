@@ -1,6 +1,4 @@
 # Language Model
-A QTL program ('program') describes sequence of actions and measurements required to perform a single test cycle. Programs written with the language are compiled to bytecode for execution by a VM running on the test unit.
-
 ## QTL Program Structure
 
 
