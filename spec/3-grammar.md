@@ -9,6 +9,14 @@
 ## Syntax Rules
 TODO
 
+## Top Level Program Structure
+`meta { ... }` header data structure
+
+`group "name" { ... };` groups related test steps together into each distinct part of the test sequence (e.g. power-on test, comms test, etc)
+
+`step "name" { ... };` main test code structure, contains all operations for performing one logical step of the test sequence (e.g. voltage regulator output, quiescent current draw, etc)
+
+
 ## Expressions
 `edge(input, direction);` detect an edge on digital input
 
@@ -19,3 +27,4 @@ TODO
 `wait time;` pause for time
 `wait condition [within time];` pause execution until condition is satisfied, optionally with timeout
 `wait for { condition1; [condition2;] [...] };` pause execution until any condition is satisfied
+
