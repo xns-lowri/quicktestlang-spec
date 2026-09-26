@@ -1,12 +1,21 @@
 # Lexical Structure
 
+## Source Files
+- Source files are UTF-8 encoded
+- Keywords are case-sensitive 
+- Identifiers must match `^[a-zA-Z_][a-zA-Z0-9_]*` and are case-sensitive
+- Whitespace separates tokens but is otherwise insignificant
+- Statements are terminated by a semicolon `;`
+- Blocks are enclosed by braces `{ }`
+- Function arguments are enclosed by parentheses `()` and separated by commas `,`
+- Comments begin with `//` and end at a newline
 
 ## Literals
 
 ### Boolean Literals
 Boolean literals are `true` and `false`.
 
-### Number Literals
+### Numeric Literals
 Integers and decimals supported, decimal precision and rounding to be rationalised at compile time based on target hardware.
 
 Integer literals must match `^[0-9+-][0-9]*`
@@ -14,7 +23,7 @@ Integer literals must match `^[0-9+-][0-9]*`
 Decimal literals must match `^[0-9+-][0-9]*\.[0-9][0-9]*`
 
 - Positive numbers may start with `+` or 0..9, negative numbers must start with `-`
-  - A unary operator followed by a positive number will (not?) be coerced to a negative literal (e.g. `x = -3.45` and `x = - 3.45`)
+  - A unary operator followed by a positive number will (not? - todo) be coerced to a negative literal (e.g. `x = -3.45` and `x = - 3.45`)
 - Any number of digits allowed before or after an optional decimal point
 - Inclusion of decimal point denotes a decimal value (and must be followed by at least one digit)
 - Future support anticipates 0x and 0b prefixes for hex and binary literals respectively, if needed
@@ -45,7 +54,6 @@ TODO all the favourites from == to +
 `step "name" { ... };` main test code structure, contains all operations for performing one logical step of the test sequence (e.g. voltage regulator output, quiescent current draw, etc)
 
 
-
 ## Keywords
 
     after
@@ -61,5 +69,19 @@ TODO all the favourites from == to +
     wait
     within
 
+TODO revise/complete according to later spec
+
 ## Data Types
-?
+The following data types are provided:
+
+### Discrete types
+    bool
+    tris
+    digital
+### Numeric types
+    u8  u16  u32  u64
+    i8  i16  i32  i64
+    f32  f64
+### Text types
+    char
+    string
