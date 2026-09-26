@@ -46,14 +46,6 @@ TODO special literals for units e.g A, V, mA, mV etc
 ## Operators
 TODO all the favourites from == to +
 
-## Top Level Program Structure
-`meta { ... }` header data structure
-
-`group "name" { ... };` groups related test steps together into each distinct part of the test sequence (e.g. power-on test, comms test, etc)
-
-`step "name" { ... };` main test code structure, contains all operations for performing one logical step of the test sequence (e.g. voltage regulator output, quiescent current draw, etc)
-
-
 ## Keywords
 
     after
