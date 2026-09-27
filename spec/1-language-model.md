@@ -17,6 +17,7 @@ At the top level, a test sequence program is comprised of `reqs`, `setup`, `step
 | `setup` | Instruction sequence to perform at the beginning of each test cycle | Before `step` blocks | One, optional |
 | `step` | Instruction sequence to perform for each logical 'step' of a test cycle | Order of execution | One or more required |
 | `finally` | Instruction sequence to perform at the end of each test cycle (e.g. safe power down sequence). This block is executed for all test cycles, after the last `step` has been performed, irrespective of test result or `step` blocks skipped. | After `step` blocks | One, optional |
+TODO function block?
 
 ### `reqs` block
 The `reqs` block functions as the definition for all resources required (and made available) by the test sequence program. This block is presented similarly to a JSON object, with key-value pairs used to specify values for the fields provided. This block must only contain assignments to the provided fields, and may not contain executable instructions.
@@ -54,3 +55,27 @@ The `finally` block is the last instruction block executed in a given context. T
 When implemented at the top level, the `finally` block always runs once after all `step` blocks have executed, regardless of any blocks skipped or the outcome of the test.
 
 When implemented in a `step` block, the block runs once after all preceding statements in the block have been executed, or after a `break` statement is encountered within the block (before flow continues to the next available `step` block, or the test complete sequence).
+
+
+## Program Instructions
+Instructions are types of statements that are used to perform all actions in the test machine environment, including all operations required to direct the test unit to stimulate and measure a DUT.
+
+Instructions in QTL are typically used to perform actions such as:
+- Applying or removing DUT power
+- Reading values from test modules
+- Writing values to test modules, incorporating:
+  - Test stimulus signal setup
+  - Test module setup at runtime
+  - Triggering test module actions (e.g. ADC conversion)
+- Timing and synchronisation
+
+QTL supports runtime variable creation, the scope and lifetime of which are handled automatically by the language. Memory space available for variables is platform-dependent.
+
+Variables must be created within a block, and are local to their enclosing block unless declared with a `global` modifier. 
+
+All variables created during a test cycle are bound to the lifetime of that test cycle and are not kept or otherwise available in subsequent cycles.
+
+
+## Execution Model
+
+TODO
