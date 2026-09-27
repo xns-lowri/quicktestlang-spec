@@ -6,7 +6,7 @@ A QTL test program contains the following source files:
 - Config and limit values file
 - Optional: Test assets (e.g. waveforms)
 
-The source code is compiled into executable VM bytecode and packaged with the config/limits and assets files (package tbd) before being made available to test units alongside the config/limit file and any test assets.
+The source code is compiled into executable VM bytecode and packaged with the config/limits and assets files (package tbd) before being made available to test units.
 - TODO: consider options for signing/verifying versions, possibly out of scope for the language?
 
 ## Program Structure
