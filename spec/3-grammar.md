@@ -1,5 +1,5 @@
 # Grammar
-## Notation
+## EBNF Notation
     "word"          literal keyword/token
     name            another grammar rule
     [ item ]        optional
