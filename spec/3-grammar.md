@@ -1,14 +1,55 @@
 # Grammar
-    
-## Syntax Rules
-TODO
 
-## Top Level Program Structure
-`meta { ... }` header data structure
+## Top Level Declarations
+### Requirements Data
+A typical requirements data block is shown below:
+
+    reqs {
+        alias: "test name",
+        modules: [
+            {
+                type: "module_type",
+                slot: 0,
+                config: {
+                    input_low: 0.7V,
+                    input_high: 2.3V
+                },
+                pinmap: [
+                    {
+                        id: "pin0",
+                        alias: "ENABLE",
+                        dir: "output",
+                        default: "low",
+                    }
+                ]
+            }
+        ],
+        params: [
+            {
+                alias: "param1",
+                type: number,
+                unit: V
+            }
+        ],
+        results: [
+            {
+                alias: "measurement1",
+                type: number,
+                unit: mV
+            }
+        ],
+        fixture_id: "identifier string"
+    }
+TODO better explanation??
+
+### Step Declarations
 
 `group "name" { ... };` groups related test steps together into each distinct part of the test sequence (e.g. power-on test, comms test, etc)
 
 `step "name" { ... };` main test code structure, contains all operations for performing one logical step of the test sequence (e.g. voltage regulator output, quiescent current draw, etc)
+    
+## Syntax Rules
+TODO
 
 
 ## Expressions
