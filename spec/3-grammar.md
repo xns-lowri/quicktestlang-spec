@@ -48,11 +48,11 @@ TODO better explanation??
 
 `step "name" { ... };` main test code structure, contains all operations for performing one logical step of the test sequence (e.g. voltage regulator output, quiescent current draw, etc)
     
-## Syntax Rules
+## Statements
 TODO
 
 
-## Expressions
+### Expressions
 `edge(input, direction);` detect an edge on digital input
 
 `expect condition [after t0] [within t1];`
@@ -64,6 +64,12 @@ TODO
 `wait condition [within time];` pause execution until condition is satisfied, optionally with timeout
 
 `wait for { condition1; [condition2;] [...] };` pause execution until any condition is satisfied
+
+### Function Invocation
+
+### Conditional Syntax
+
+### Operator Precedence
 
 
 ## EBNF Notation
