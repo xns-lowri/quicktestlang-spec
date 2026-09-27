@@ -10,7 +10,7 @@ The source code is compiled into executable VM bytecode and packaged with the co
 - TODO: consider options for signing/verifying versions, possibly out of scope for the language?
 
 ## Program Structure
-The test sequence program is comprised of `reqs`, `setup`, `step`, and `finally` blocks:
+At the top level, a test sequence program is comprised of `reqs`, `setup`, `step`, and `finally` blocks:
 | Block ID | Description | Ordering | Amount required |
 |---|---|---|---|
 | `reqs` | Metadata block defining required test modules, resource (e.g. pin or port) mappings and aliases (including special functions: power & internal resources), config and limits mapping, and test output (results) data mapping. | First | One |
@@ -19,16 +19,25 @@ The test sequence program is comprised of `reqs`, `setup`, `step`, and `finally`
 | `finally` | Instruction sequence to perform at the end of each test cycle (e.g. safe power down sequence). This block is executed for all test cycles, after the last `step` has been performed, irrespective of test result or `step` blocks skipped. | After `step` blocks | One, optional |
 
 ### `reqs` block
-The `reqs` block functions as the definition for all resources required (and made available) by the test sequence program. This block is presented similarly to a JSON object, with key-value pairs used to specify values for the fields provided:
-- modules (list of test modules required)
+The `reqs` block functions as the definition for all resources required (and made available) by the test sequence program. This block is presented similarly to a JSON object, with key-value pairs used to specify values for the fields provided. This block must only contain assignments to the provided fields, and may not contain executable instructions.
+- modules []
   - config (module-wide setup parameters)
   - pinmap (pin usages, configuration, aliases)
-- runconf (runtime data config i.e. config/limits file endpoints)
-- resconf (results data config i.e. test result output data endpoints)
+- params []
+  - alias
+  - type
+- results []
+  - alias
+  - type
 - verify (fixture ID)
 
 
 ### `setup` block
+The `setup` block is the first instruction block executed in a given context. The two contexts allowing a `setup` block are the top-level program (before all `step` blocks) and as the first statement inside a `step` block. A `setup` block may not contain `test` operators.
+
+When implemented at the top level, the `setup` block runs once before any subsequent `step` blocks.
+
+When implemented in a `step` block, the block runs once before subsequent statements in the enclosing block.
 
 ### `step` block
 
