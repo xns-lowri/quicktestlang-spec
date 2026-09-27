@@ -70,7 +70,7 @@ The following data types are provided:
 
 ### Discrete types
     bool                    true/false
-    3state                  true/false/highZ
+    3state                  high/low/hiz
 ### Numeric types
     u8  u16  u32  u64       unsigned integers
     i8  i16  i32  i64       signed integers
