@@ -15,6 +15,8 @@
 ### Boolean Literals
 Boolean literals are `true` and `false`.
 
+Tristate literals are `high`, `low`, and `hiz`.
+
 ### Numeric Literals
 Integers and decimals supported, decimal precision and rounding to be rationalised at compile time based on target hardware.
 
