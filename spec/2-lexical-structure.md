@@ -60,11 +60,30 @@ The following data types are provided:
     string                  character string
 
 ## Operators
-TODO all the favourites from == to +
+    + - * / %          arithmetic operators
+    == != < <= > >=    comparison operators
+    && || !            logical operators
+    & | ^ ~ << >>      bitwise operators
+
+### Type Conversion and Promotion
+Types will always be promoted or implicitly converted where conversion is not lossy:
+TODO table of conversions
+
+Types will never be converted implicitly where conversion may be lossy, a compiler error will be generated. Use `as` to type cast instead.
+
+Signed and unsigned values may(?) be mixed, but arithmetic overflow or underflow (or sign change for unsigned values) will generate runtime faults (is this a bad idea??).
+
+### Bitwise operators
+Bitwise shift operators `<<` and `>>` perform arithmetic shifts 
+
+TODO
+- float conversion
+- operator precedence
 
 ## Keywords
 
     after
+    as
     edge
     expect
     fail
