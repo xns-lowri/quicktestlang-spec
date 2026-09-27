@@ -45,6 +45,20 @@ TODO allowing unicode strings for ux, ascii support for e.g. comms testing
 ### Unit literals
 TODO special literals for units e.g A, V, mA, mV etc
 
+## Data Types
+The following data types are provided:
+
+### Discrete types
+    bool                    true/false
+    3state                  high/low/hiz
+### Numeric types
+    u8  u16  u32  u64       unsigned integers
+    i8  i16  i32  i64       signed integers
+    f32  f64                floating point
+### Text types
+    char                    single character
+    string                  character string
+
 ## Operators
 TODO all the favourites from == to +
 
@@ -64,17 +78,3 @@ TODO all the favourites from == to +
     within
 
 TODO revise/complete according to later spec
-
-## Data Types
-The following data types are provided:
-
-### Discrete types
-    bool                    true/false
-    3state                  high/low/hiz
-### Numeric types
-    u8  u16  u32  u64       unsigned integers
-    i8  i16  i32  i64       signed integers
-    f32  f64                floating point
-### Text types
-    char                    single character
-    string                  character string
