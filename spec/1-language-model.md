@@ -13,16 +13,29 @@ The source code is compiled into executable VM bytecode and packaged with the co
 The test sequence program is comprised of `reqs`, `setup`, `step`, and `finally` blocks:
 | Block ID | Description | Ordering | Amount required |
 |---|---|---|---|
-| `reqs` | Metadata block defining required test modules, resource (e.g. pin or port) mappings and aliases (including special functions: power & internal resources), config and limits mapping, and test output (results) data mapping. | First | One, required |
+| `reqs` | Metadata block defining required test modules, resource (e.g. pin or port) mappings and aliases (including special functions: power & internal resources), config and limits mapping, and test output (results) data mapping. | First | One |
 | `setup` | Instruction sequence to perform at the beginning of each test cycle | Before `step` blocks | One, optional |
 | `step` | Instruction sequence to perform for each logical 'step' of a test cycle | Order of execution | One or more required |
-| `finally` | Instruction sequence to perform at the end of each test cycle (e.g. safe power down sequence). This block is executed for all test cycles, after the last `step` has been performed, irrespective of test result or `step` blocks skipped. |
+| `finally` | Instruction sequence to perform at the end of each test cycle (e.g. safe power down sequence). This block is executed for all test cycles, after the last `step` has been performed, irrespective of test result or `step` blocks skipped. | After `step` blocks | One, optional |
+
+### `reqs` block
+The `reqs` block functions as the definition for all resources required (and made available) by the test sequence program. This block is presented similarly to a JSON object, with key-value pairs used to specify values for the fields provided:
+- modules (list of test modules required)
+  - config (module-wide setup parameters)
+  - pinmap (pin usages, configuration, aliases)
+- runconf (runtime data config i.e. config/limits file endpoints)
+- resconf (results data config i.e. test result output data endpoints)
+- verify (fixture ID)
+
+
+### `setup` block
+
+### `step` block
+
+### `finally` block
 
 TODOs:
 - sections: metadata, init, test
 - mapping in values from limit file (+ identifiers)
 
-TODOs - metadata:
-- aliasing resources (e.g. input pin given name that identifies net on DUT)
-- setting up resources & resource pin mapping/direction
-- dut/fixture id
+
