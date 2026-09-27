@@ -1,5 +1,11 @@
 # Grammar
-
+## Notation
+    "word"          literal keyword/token
+    name            another grammar rule
+    [ item ]        optional
+    { item }        zero or more repetitions
+    item | item     alternative
+    
 ## Syntax Rules
 TODO
 
@@ -24,10 +30,3 @@ TODO
 
 `wait for { condition1; [condition2;] [...] };` pause execution until any condition is satisfied
 
-
-## EBNF notation
-    "word"      literal keyword/token
-    name        another grammar rule
-    [ item ]    optional
-    { item }    zero or more repetitions
-    item | item alternative
