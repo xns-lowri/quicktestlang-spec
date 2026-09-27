@@ -20,6 +20,8 @@ At the top level, a test sequence program is comprised of `reqs`, `setup`, `step
 
 ### `reqs` block
 The `reqs` block functions as the definition for all resources required (and made available) by the test sequence program. This block is presented similarly to a JSON object, with key-value pairs used to specify values for the fields provided. This block must only contain assignments to the provided fields, and may not contain executable instructions.
+
+#### `reqs` fields:
 - modules []
   - config (module-wide setup parameters)
   - pinmap (pin usages, configuration, aliases)
@@ -29,7 +31,7 @@ The `reqs` block functions as the definition for all resources required (and mad
 - results []
   - alias
   - type
-- verify (fixture ID)
+- fixture_id
 
 
 ### `setup` block
@@ -40,11 +42,11 @@ When implemented at the top level, the `setup` block runs once before any subseq
 When implemented in a `step` block, the block runs once before subsequent statements in the enclosing block.
 
 ### `step` block
+The `step` block contains all instructions required to perform one logical step of a test sequence. It is up to the engineer to decide what may or may not constitute a 'test step', but the design of this language is centred on using the distinction to group a set of measurements and tests by function for the purposes of reporting results, and provide means for common 'test sequence' flow control (e.g. skip all subsequent steps if the DUT doesn't take power) without exposing full control of the test state machine to the test sequence program.
 
 ### `finally` block
+The `finally` block is the last instruction block executed in a given context. The two contexts allowing a `finally` block are the top-level program (after all `step` blocks) and as the last statement inside a `step` block. A `finally` block may not contain `test` operators.
 
-TODOs:
-- sections: metadata, init, test
-- mapping in values from limit file (+ identifiers)
+When implemented at the top level, the `finally` block always runs once after all `step` blocks have executed, regardless of any blocks skipped or the outcome of the test.
 
-
+When implemented in a `step` block, the block runs once after all preceding statements in the block have been executed, or after a `break` statement is encountered within the block (before flow continues to the next available `step` block, or the test complete sequence).
