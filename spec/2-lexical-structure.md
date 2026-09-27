@@ -20,9 +20,9 @@ Tristate literals are `high`, `low`, and `hiz`.
 ### Numeric Literals
 Integers and decimals supported, decimal precision and rounding to be rationalised at compile time based on target hardware.
 
-Integer literals must match `^[0-9+-][0-9]*`
+Integer literals must match `^[-+]?[0-9][0-9]*`
 
-Decimal literals must match `^[0-9+-][0-9]*\.[0-9][0-9]*`
+Decimal literals must match `^[-+]?[0-9][0-9]*\.[0-9][0-9]*`
 
 - Positive numbers may start with `+` or 0..9, negative numbers must start with `-`
   - A unary operator followed by a positive number will (not? - todo) be coerced to a negative literal (e.g. `x = -3.45` and `x = - 3.45`)
