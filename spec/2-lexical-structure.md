@@ -66,7 +66,7 @@ The following data types are provided:
     & | ^ ~ << >>      bitwise operators
 
 ### Type Conversion and Promotion
-Types will always be promoted or implicitly converted where conversion is not lossy:
+Types will always be promoted or implicitly converted where conversion is guaranteed not to be lossy:
 TODO table of conversions
 
 Types will never be converted implicitly where conversion may be lossy, a compiler error will be generated. Use `as` to type cast instead.
