@@ -19,7 +19,9 @@ TODO
 `(let) variable = value;` create temporary variable within the current scope - as of yet still undecided on weak or strong types
 
 `wait time;` pause for time
+
 `wait condition [within time];` pause execution until condition is satisfied, optionally with timeout
+
 `wait for { condition1; [condition2;] [...] };` pause execution until any condition is satisfied
 
 
