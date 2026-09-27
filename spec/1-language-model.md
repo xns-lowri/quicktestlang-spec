@@ -44,7 +44,9 @@ When implemented in a `step` block, the block runs once before subsequent statem
 ### `step` block
 The `step` block contains all instructions required to perform one logical step of a test sequence. 
 
-It is up to the engineer to decide what may or may not constitute a 'test step', but the design of this language is centred on using the distinction to group a set of measurements and tests by function for the purposes of reporting results, and provide means for common 'test sequence' flow control (e.g. skip all subsequent steps if the DUT doesn't take power) without exposing full control of the test state machine to the test sequence program.
+It is up to the engineer to decide what may or may not constitute a 'test step', but the design of this language is centred on using the distinction to group a set of measurements and tests under a single function or test point.
+
+This is used both for the purposes of reporting results, and to provide means for common 'test sequence' flow control (e.g. skip all subsequent steps if the DUT doesn't take power) without exposing full control of the test state machine to the test sequence program.
 
 ### `finally` block
 The `finally` block is the last instruction block executed in a given context. The two contexts allowing a `finally` block are the top-level program (after all `step` blocks) and as the last statement inside a `step` block. A `finally` block may not contain `test` operators.
