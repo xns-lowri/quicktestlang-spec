@@ -54,6 +54,7 @@ TODO
 
 ### Expressions
 `edge(input, direction);` detect an edge on digital input
+alt: hdl-inspired - `posedge input`
 
 `expect condition [after t0] [within t1];`
 
